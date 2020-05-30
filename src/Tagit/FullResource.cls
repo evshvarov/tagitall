@@ -14,6 +14,13 @@ Property tags As list Of Tagit.Tag;
 
 // Property tags As list Of %Library.String;
 
+ClassMethod Run() As %Status
+{
+    set fullres = ##class(Tagit.FullResource).%New()
+    do fullres.LoadFullResource(1)
+    do fullres.%JSONExport()
+}
+
 Method LoadFullResource(resourceId As %Integer) As %Status
 {
     try {
