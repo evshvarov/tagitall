@@ -14,6 +14,10 @@ RUN \
   apt-get update && \
   apt-get -y install python3 python3-pip 
 
+  # install SQL Server driver
+RUN apt-get update && ACCEPT_EULA=Y apt-get install -y unixodbc-dev
+
+
 RUN \
   pip3 install pyodbc
 
